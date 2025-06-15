@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "5e44a5f9-6cec-4dc6-8d7c-0ae13e983759",
+		"name": "t1-msa-tracking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34677345"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"dan\",\n    \"password\": \"&pruebas123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://t1-msa-tracking.onrender.com/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"dan\",\n    \"password\": \"&pruebas123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://t1-msa-tracking.onrender.com/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "export",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGUzOTZlOGU1NTliMGViZmFiZTA2MiIsImlhdCI6MTc0OTk1NzM3NSwiZXhwIjoxNzQ5OTYwOTc1fQ.gTw8U4O6P4PL2AF0Rwf-FqGclMO0F_ODczpfyuV8t1E"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://t1-msa-tracking.onrender.com/api/components/export"
+			},
+			"response": []
+		},
+		{
+			"name": "stats",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGUzOTZlOGU1NTliMGViZmFiZTA2MiIsImlhdCI6MTc0OTk1NzM3NSwiZXhwIjoxNzQ5OTYwOTc1fQ.gTw8U4O6P4PL2AF0Rwf-FqGclMO0F_ODczpfyuV8t1E"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://t1-msa-tracking.onrender.com/api/components/stats"
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGUzOTZlOGU1NTliMGViZmFiZTA2MiIsImlhdCI6MTc0OTk1NzM3NSwiZXhwIjoxNzQ5OTYwOTc1fQ.gTw8U4O6P4PL2AF0Rwf-FqGclMO0F_ODczpfyuV8t1E"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://t1-msa-tracking.onrender.com/api/health"
+			},
+			"response": []
+		},
+		{
+			"name": "logEvent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"component\": \"Button\",\n    \"action\": \"click\",\n    \"variant\": \"danger\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://t1-msa-tracking.onrender.com/api/components/track"
+			},
+			"response": []
+		}
+	]
+}

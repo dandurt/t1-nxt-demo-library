@@ -19,11 +19,14 @@ Cada componente incluye integración automática con un sistema de **tracking de
 
 ---
 
-## 🌐 Backend de Tracking
+## 🌐 Backend de Tracking (Deploy en Render)
 
-> [`t1-msa-tracking`](https://github.com/dandurt/t1-msa-tracking)
+> [`t1-msa-tracking`](https://github.com/dandurt/t1-msa-tracking)  
+> 🌍 [https://t1-msa-tracking.onrender.com](https://t1-msa-tracking.onrender.com)
 
-Backend construido con **Node.js + Express** y usa **MongoDB Atlas** como base de datos.
+Este backend está construido con **Node.js + Express** y usa **MongoDB Atlas** como base de datos. Está **desplegado en [Render](https://render.com)**, lo que permite acceso público desde cualquier entorno Frontend.
+
+---
 
 ### 🔐 Autenticación
 
