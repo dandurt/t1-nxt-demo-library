@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# T1 NXT Demo Library
 
-## Getting Started
+Este proyecto es una **aplicación de demostración** construida con **Next.js** que utiliza una librería de componentes personalizada y un backend para registrar el uso de esos componentes en tiempo real.
 
-First, run the development server:
+---
+
+## 📦 Librería de Componentes
+
+> [`@dandurt/t1-component-library`](https://www.npmjs.com/package/@dandurt/t1-component-library)
+
+Esta librería incluye componentes reutilizables como:
+
+- **Button** con variantes, íconos y estados
+- **Input** con validación y estilos dinámicos
+- **Modal** configurable
+- **Card** con soporte para imágenes y estructura flexible
+
+Cada componente incluye integración automática con un sistema de **tracking de uso**, que envía datos al backend sin que el desarrollador tenga que hacer nada adicional.
+
+---
+
+## 🌐 Backend de Tracking
+
+> [`t1-msa-tracking`](https://github.com/dandurt/t1-msa-tracking)
+
+Backend construido con **Node.js + Express** y usa **MongoDB Atlas** como base de datos.
+
+### 🔐 Autenticación
+
+| Método | Endpoint             | Descripción                   |
+| ------ | -------------------- | ----------------------------- |
+| POST   | `/api/auth/register` | Registrar nuevo usuario       |
+| POST   | `/api/auth/login`    | Iniciar sesión (devuelve JWT) |
+
+---
+
+### 📊 Tracking de Componentes
+
+| Método | Endpoint                 | Descripción                                                         |
+| ------ | ------------------------ | ------------------------------------------------------------------- |
+| POST   | `/api/components/track`  | Registra el uso de un componente (público)                          |
+| GET    | `/api/components/stats`  | Devuelve estadísticas de uso (público)                              |
+| GET    | `/api/components/export` | Exporta estadísticas en CSV o JSON (requiere autenticación via JWT) |
+
+---
+
+### 🩺 Health Check
+
+| Método | Endpoint      | Descripción             |
+| ------ | ------------- | ----------------------- |
+| GET    | `/api/health` | Verifica estado del API |
+
+---
+
+### 📄 Ejemplo de Payload de Tracking
+
+````json
+{
+  "component": "Button",
+  "action": "click",
+  "variant": "primary",
+  "timestamp": "2025-06-14T16:32:12.000Z"
+}
+
+
+## 🚀 Funcionalidades del Demo
+
+- Página `/demo` para probar visualmente todos los componentes
+- Página `/stats` para ver las estadísticas de uso **en tiempo real** (polling cada 5 segundos)
+- Seguimiento de eventos como `render`, `click`, etc., enviados automáticamente
+
+---
+
+## 🧪 Scripts disponibles
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm run dev        # Ejecuta el servidor de desarrollo
+npm run build      # Compila la app para producción
+npm start          # Sirve la app compilada
+````
